@@ -12,11 +12,11 @@ const form = document.querySelector('.add-book');
  let booksCollection = [];
  let j = 0;
 
- function bookLists (b) {
+ function bookLists (item) {
   return `
-  <li>${b.title}</li>
-  <li>${b.author}</li>
-  <button type='button' id='${b.id}' class='remove-btn'>Remove</button>
+  <li>${item.title}</li>
+  <li>${item.author}</li>
+  <button type='button' id='${item.id}' class='remove-btn'>Remove</button>
   `;
  }
 
@@ -40,6 +40,10 @@ const form = document.querySelector('.add-book');
   booksCollection.push(singleBook);
   localStorage.setItem('bookObject', JSON.stringify(booksCollection));
   addingBook.style.listStyle = 'none';
+  addingBook.style.width = '100%';
+  addingBook.style.display = 'flex';
+  addingBook.style.flexDirection = 'column';
+  addingBook.style.alignItems = 'start';
    addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
    addingBook.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-btn')) {
@@ -49,4 +53,17 @@ const form = document.querySelector('.add-book');
    form.reset();
  };
  addBtn.addEventListener('click', addItem);
-
+window.addEventListener('load', () => {
+ const getData = localStorage.getItem('bookObject');
+ const data = JSON.parse(getData);
+ if (data) {
+ booksCollection = data;
+ }
+ addingBook.style.listStyle = 'none';
+ addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
+ addingBook.addEventListener('click', (e) => {
+ if (e.target.classList.contains('remove-btn')) {
+ removeItem(e);
+ }
+ });
+ });
