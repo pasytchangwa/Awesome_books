@@ -55,9 +55,8 @@ const addItem = (ev) => {
   });
   form.reset();
 };
-addBtn.addEventListener('click', addItem);
-window.addEventListener('load', () => {
-  const getData = localStorage.getItem('booksCollection');
+window.onload = () => {
+  const getData = localStorage.getItem('bookObject');
   const data = JSON.parse(getData);
   if (data) {
     booksCollection = data;
@@ -69,4 +68,5 @@ window.addEventListener('load', () => {
       removeItem(e);
     }
   });
-});
+};
+addBtn.addEventListener('click', addItem);
