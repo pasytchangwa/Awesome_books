@@ -1,6 +1,4 @@
 // calling DOM elements
-const mainSect = document.querySelector('.main-section');
-const mainTitle = document.querySelector('.main-title');
 const addingBook = document.querySelector('.book-list');
 const addBtn = document.querySelector('.add-btn');
 const addTitle = document.querySelector('.title');
@@ -23,13 +21,12 @@ function bookLists(item) {
 // Removing book
 
 const removeItem = (ev) => {
-  let removeId = ev.target.id;
+  const removeId = ev.target.id;
   booksCollection = booksCollection.filter(
-    (x) =>
-      x !==
-      booksCollection[
+    (x) => x
+      !== booksCollection[
         booksCollection.findIndex((y) => y.id === parseInt(removeId, 10))
-      ]
+      ],
   );
   localStorage.setItem('bookObject', JSON.stringify(booksCollection));
   addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
@@ -61,15 +58,15 @@ const addItem = (ev) => {
 addBtn.addEventListener('click', addItem);
 window.addEventListener('load', () => {
   const getData = localStorage.getItem('booksCollection');
- const data = JSON.parse(getData);
- if (data) {
- booksCollection = data;
- }
- addingBook.style.listStyle = 'none';
- addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
- addingBook.addEventListener('click', (e) => {
- if (e.target.classList.contains('remove-btn')) {
- removeItem(e);
- }
- });
- });
+  const data = JSON.parse(getData);
+  if (data) {
+    booksCollection = data;
+  }
+  addingBook.style.listStyle = 'none';
+  addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
+  addingBook.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+      removeItem(e);
+    }
+  });
+});
