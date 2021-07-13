@@ -47,6 +47,7 @@ const form = document.querySelector('.add-book');
      removeItem(e);
     }
    });
+   form.reset();
  };
 
  window.onload = () => {
@@ -65,6 +66,3 @@ const form = document.querySelector('.add-book');
  };
  addBtn.addEventListener('click', addItem);
 
-
-
- 
