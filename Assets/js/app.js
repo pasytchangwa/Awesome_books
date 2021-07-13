@@ -23,11 +23,10 @@ const form = document.querySelector('.add-book');
  // Removing book
 
  const removeItem = (ev) => {
-   let removeId = ev.target.id;
-   booksCollection = booksCollection.filter((x) => x !== booksCollection[booksCollection.findIndex((y) => y.id === parseInt(removeId, 10))]);
-   localStorage.setItem('bookObject', JSON.stringify(booksCollection));
-   addingBook.style.listStyle = 'none';
-   addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
+  let removeId = ev.target.id;
+  booksCollection = booksCollection.filter((x) => x !== booksCollection[booksCollection.findIndex((y) => y.id === parseInt(removeId, 10))]);
+  localStorage.setItem('bookObject', JSON.stringify(booksCollection));
+  addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
  };
 
  const addItem = (ev) => {
@@ -48,21 +47,6 @@ const form = document.querySelector('.add-book');
     }
    });
    form.reset();
- };
-
- window.onload = () => {
-  const getData = localStorage.getItem('bookObject');
-  const data = JSON.parse(getData);
-  if (data) {
-   booksCollection = data;
-  }
-  addingBook.style.listStyle = 'none';
-  addingBook.innerHTML = `${booksCollection.map(bookLists).join('')}`;
-  addingBook.addEventListener('click', (e) => {
-    if (e.target.classList.contains('remove-btn')) {
-      removeItem(e);
-    }
-  });
  };
  addBtn.addEventListener('click', addItem);
 
