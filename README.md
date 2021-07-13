@@ -38,6 +38,26 @@ git@github.com:pasytchangwa/Awesome_books.git
 
 - Your repository will be cloned and stored in the location you chose. You can then open the repository and begin working on it in VS Code.
 
+## Test
+
+For tracking linter errors locally you need to follow these steps:
+
+- After cloning the project you need to run this command
+
+npm install This command will download all the dependancies of the project
+
+- For tracking the linter errors in HTML file run:
+
+npx hint .
+
+- And for tracking the linter errors in CSS file run:
+
+npx stylelint "*/.{css,scss}"
+
+- And for tracking the linter errors in JavaScript file run:
+
+npx eslint .
+
 
 ## Authors
 
