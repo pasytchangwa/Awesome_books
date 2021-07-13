@@ -23,7 +23,10 @@ Additional description about the project and its features.
 
 ## Steps to clone the repository to your local repo using VS Code
 
-- In the Clone this repository dialog, select the Clone in VS Code button. 
+- In the Clone this repository dialog, select the Clone in VS Code button. You can use the link below to clone to your local repo:
+
+git@github.com:pasytchangwa/Awesome_books.git
+
 - If you have not already installed the Atlassian for VS Code extension, you will be prompted to install it. 
 - Select Install > select the Reload Window and Open button in the info dialog.
 
