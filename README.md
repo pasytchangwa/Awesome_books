@@ -21,6 +21,20 @@ Additional description about the project and its features.
 - HTML, JavaScript linters
 - Github Pages
 
+## Steps to clone the repository to your local repo using VS Code
+
+- In the Clone this repository dialog, select the Clone in VS Code button. 
+- If you have not already installed the Atlassian for VS Code extension, you will be prompted to install it. 
+- Select Install > select the Reload Window and Open button in the info dialog.
+
+- In VS Code, select Clone a new copy from the dropdown menu.
+
+- When prompted, select the local storage location where you want to keep the cloned repository. 
+
+- Select the Select repository location button.
+
+- Your repository will be cloned and stored in the location you chose. You can then open the repository and begin working on it in VS Code.
+
 
 ## Authors
 
