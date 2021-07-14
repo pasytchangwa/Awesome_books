@@ -1,7 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 400;
+}
+
 .main-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  row-gap: 15px;
+  margin: 0 auto;
   height: 100vh;
+}
+
+.main-section h1 {
+  text-transform: capitalize;
+}
+
+.book-list {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  row-gap: 2px;
+  width: 80%;
+  padding-bottom: 2px;
+}
+
+.nodisplay {
+  display: none;
+}
+
+.list-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-list li:nth-child(odd) {
+  background-color: #e9e9e9;
+}
+
+.book-list li p {
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.book-list li button {
+  border: 3px solid black;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: capitalize;
+  background-color: transparent;
+  margin-right: 4px;
+  width: 4rem;
+}
+
+.main-section hr {
+  width: 20%;
+  height: 0.3rem;
+  background-color: black;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.add-book {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.add-book .title,
+.add-book .author {
+  border: 3px solid black;
+  align-self: flex-end;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.add-book .title::placeholder,
+.add-book .author::placeholder {
+  font-family: 'Patrick Hand', cursive;
+  color: black;
+}
+
+.add-book .add-btn {
+  width: 2rem;
+  border: 3px solid black;
+  background-color: transparent;
+  align-self: flex-end;
+  box-shadow: 2px 1px #333;
+}
+
+.remove-btn {
+  box-shadow: 2px 1px #333;
+}
+
+.border-on {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  row-gap: 2px;
+  width: 80%;
+  padding-bottom: 2px;
+  border: 3px solid black;
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .border-on {
+    width: 60%;
+  }
 }
