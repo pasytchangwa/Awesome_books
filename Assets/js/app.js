@@ -4,7 +4,8 @@ const addTitle = document.querySelector('.title');
 const addAuthor = document.querySelector('.author');
 const form = document.querySelector('.add-book');
 let j = 0;
-console.log(addingBook.children === null);
+
+console.log(addingBook.children);
 
 // Create a book class
 class BooksCollection {
@@ -34,6 +35,11 @@ class BooksCollection {
     this.collection.push(singleBook);
     localStorage.setItem('bookObject', JSON.stringify(this.collection));
     this.DisplayBooks(this.collection);
+    if (addingBook.children.length < 0) {
+      addingBook.style.border = 'none';
+    } else {
+      addingBook.style.border = '3px solid black';
+    }
     addingBook.style.listStyle = 'none';
     addingBook.style.width = '100%';
     addingBook.addEventListener('click', (e) => {
@@ -78,7 +84,7 @@ form.addEventListener('submit', (e) => {
     const alert = document.createElement('p');
     alert.innerHTML = 'Please you must enter a value for both inputs';
     alert.style.color = 'red';
-    alert.style.textStyle = 'bold';
+    alert.style.fontWeight = 'bold';
     form.appendChild(alert);
   } else {
     collectedBooks.addItem();
