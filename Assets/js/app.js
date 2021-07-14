@@ -72,7 +72,7 @@ form.addEventListener('submit', (e) => {
     alert.innerHTML = 'Please you must enter a value for both inputs';
     alert.style.color = 'red';
     alert.style.textStyle = 'bold';
-    const 
+    form.appendChild(alert);
   } else {
     collectedBooks.addItem();
   }
