@@ -46,7 +46,9 @@ class BooksCollection {
  removeItem = (ev) => {
    const removeId = ev.target.id;
    this.collection = this.collection.filter(
-     (x) => x !== this.collection[this.collection.findIndex((y) => y.id === parseInt(removeId, 10))],
+   (x) 
+   => x 
+   !== this.collection[this.collection.findIndex((y) => y.id === parseInt(removeId, 10))],
    );
    localStorage.setItem('bookObject', JSON.stringify(this.collection));
    this.DisplayBooks(this.collection);
