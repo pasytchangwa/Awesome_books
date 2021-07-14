@@ -75,3 +75,26 @@ body {
   font-weight: bold;
   margin: 0 auto;
 }
+
+.add-book {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.add-book .title,
+.add-book .author {
+  border: 3px solid black;
+  align-self: flex-end;
+  width: 253px;
+}
+
+.add-book .add-btn {
+  width: 2rem;
+  border: 3px solid black;
+  background-color: transparent;
+  align-self: flex-end;
+}
