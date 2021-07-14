@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 100%;
   row-gap: 15px;
   margin: 0 auto;
   height: 100vh;
@@ -31,9 +31,8 @@ body {
   margin: 0 auto;
   flex-direction: column;
   row-gap: 2px;
-  width: 100%;
+  width: 80%;
   padding-bottom: 2px;
-  /* border: 3px solid black; */
 }
 
 .nodisplay {
@@ -78,7 +77,6 @@ body {
 }
 
 .add-book {
-  width: 60%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -90,7 +88,14 @@ body {
 .add-book .author {
   border: 3px solid black;
   align-self: flex-end;
-  width: 253px;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.add-book .title::placeholder,
+.add-book .author::placeholder {
+  font-family: 'Patrick Hand', cursive;
+  color: black;
 }
 
 .add-book .add-btn {
@@ -98,4 +103,26 @@ body {
   border: 3px solid black;
   background-color: transparent;
   align-self: flex-end;
+  box-shadow: 2px 1px #333;
+}
+
+.remove-btn {
+  box-shadow: 2px 1px #333;
+}
+
+.border-on {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  row-gap: 2px;
+  width: 80%;
+  padding-bottom: 2px;
+  border: 3px solid black;
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .border-on {
+    width: 60%;
+  }
 }

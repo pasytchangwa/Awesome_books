@@ -5,8 +5,6 @@ const addAuthor = document.querySelector('.author');
 const form = document.querySelector('.add-book');
 let j = 0;
 
-console.log(addingBook.children);
-
 // Create a book class
 class BooksCollection {
   constructor() {
@@ -35,16 +33,20 @@ class BooksCollection {
     this.collection.push(singleBook);
     localStorage.setItem('bookObject', JSON.stringify(this.collection));
     this.DisplayBooks(this.collection);
-    if (addingBook.children.length < 0) {
-      addingBook.style.border = 'none';
+    if (addingBook.children.length > 0) {
+      addingBook.classList.add('border-on');
     } else {
-      addingBook.style.border = '3px solid black';
+      addingBook.classList.remove('border-on');
     }
     addingBook.style.listStyle = 'none';
-    addingBook.style.width = '100%';
     addingBook.addEventListener('click', (e) => {
       if (e.target.classList.contains('remove-btn')) {
         this.removeItem(e);
+        if (addingBook.children.length > 0) {
+          addingBook.classList.add('border-on');
+        } else {
+          addingBook.classList.remove('border-on');
+        }
       }
     });
     form.reset();
@@ -71,9 +73,19 @@ window.onload = () => {
   }
   addingBook.style.listStyle = 'none';
   collectedBooks.DisplayBooks(collectedBooks.collection);
+  if (addingBook.children.length > 0) {
+    addingBook.classList.add('border-on');
+  } else {
+    addingBook.classList.remove('border-on');
+  }
   addingBook.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-btn')) {
       collectedBooks.removeItem(e);
+      if (addingBook.children.length > 0) {
+        addingBook.classList.add('border-on');
+      } else {
+        addingBook.classList.remove('border-on');
+      }
     }
   });
 };
