@@ -15,7 +15,7 @@ class BooksCollection {
     const bookLists = itemarr
       .map(
         (item) => `
-  <li class='list-item'><p>${item.title} by ${item.author}</p>
+  <li class='list-item'><p>"${item.title}" by ${item.author}</p>
   <button type='button' id='${item.id}' class='remove-btn'>Remove</button></li>
   `,
       )
