@@ -7,7 +7,7 @@ let j = 0;
 
 // Create a book class
 class BooksCollection {
-  constructor([]) {
+  constructor() {
     this.collection = [];
   }
 
