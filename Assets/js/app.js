@@ -52,3 +52,21 @@ class BooksCollection {
     this.DisplayBooks(this.collection);
   }
 }
+window.onload = () => {
+  const getData = localStorage.getItem('bookObject');
+  const data = JSON.parse(getData);
+  if (data) {
+    collectedBooks.collection = data;
+  }
+  addingBook.style.listStyle = 'none';
+  collectedBooks.DisplayBooks(collectedBooks.collection);
+  addingBook.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+      collectedBooks.removeItem(e);
+    }
+  });
+};
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  collectedBooks.addItem();
+});
