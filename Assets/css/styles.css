@@ -27,7 +27,7 @@ body {
 }
 
 .book-list {
-  border: 2px solid black;
+  border: 3px solid black;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
