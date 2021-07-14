@@ -69,6 +69,9 @@ window.onload = () => {
 };
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  collectedBooks.addItem();
+  if (addTitle.value === '' || addAuthor.value === '') {
+    alert('Please enter value in title or author');
+  } else {
+    collectedBooks.addItem();
+  }
 });
-
