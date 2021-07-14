@@ -27,13 +27,16 @@ body {
 }
 
 .book-list {
-  border: 3px solid black;
-  margin: 0 auto;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   row-gap: 2px;
   width: 100%;
   padding-bottom: 2px;
+}
+
+.nodisplay {
+  display: flex;
 }
 
 .list-item {

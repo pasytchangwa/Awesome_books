@@ -4,6 +4,7 @@ const addTitle = document.querySelector('.title');
 const addAuthor = document.querySelector('.author');
 const form = document.querySelector('.add-book');
 let j = 0;
+console.log(addingBook.children === null);
 
 // Create a book class
 class BooksCollection {
@@ -35,9 +36,6 @@ class BooksCollection {
     this.DisplayBooks(this.collection);
     addingBook.style.listStyle = 'none';
     addingBook.style.width = '100%';
-    addingBook.style.display = 'flex';
-    addingBook.style.flexDirection = 'column';
-    addingBook.style.alignItems = 'start';
     addingBook.addEventListener('click', (e) => {
       if (e.target.classList.contains('remove-btn')) {
         this.removeItem(e);
@@ -49,11 +47,10 @@ class BooksCollection {
   removeItem = (ev) => {
     const removeId = ev.target.id;
     this.collection = this.collection.filter(
-      (x) =>
-        x !==
-        this.collection[
+      (x) => x
+        !== this.collection[
           this.collection.findIndex((y) => y.id === parseInt(removeId, 10))
-        ]
+        ],
     );
     localStorage.setItem('bookObject', JSON.stringify(this.collection));
     this.DisplayBooks(this.collection);
@@ -74,6 +71,7 @@ window.onload = () => {
     }
   });
 };
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (addTitle.value === '' || addAuthor.value === '') {
