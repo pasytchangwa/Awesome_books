@@ -33,6 +33,7 @@ body {
   flex-direction: column;
   row-gap: 2px;
   width: 100%;
+  padding-bottom: 2px;
 }
 
 .list-item {
@@ -45,9 +46,22 @@ body {
   background-color: #e9e9e9;
 }
 
+.book-list li p {
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
 .book-list li button {
-  border: 2px solid #333;
+  border: 3px solid black;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: capitalize;
   background-color: transparent;
+  margin-right: 4px;
+  width: 4rem;
 }
 
 .main-section hr {
