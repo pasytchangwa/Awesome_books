@@ -68,7 +68,11 @@ window.onload = () => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (addTitle.value === '' || addAuthor.value === '') {
-    alert('Please enter value in title or author');
+    const alert = document.createElement('p');
+    alert.innerHTML = 'Please you must enter a value for both inputs';
+    alert.style.color = 'red';
+    alert.style.textStyle = 'bold';
+    const 
   } else {
     collectedBooks.addItem();
   }
