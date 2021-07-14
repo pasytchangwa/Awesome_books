@@ -46,12 +46,29 @@ class BooksCollection {
  removeItem = (ev) => {
    const removeId = ev.target.id;
    this.collection = this.collection.filter(
-     (x) => x !== this.collection[this.collection.findIndex((y) 
-      
-      => y.id === parseInt(removeId, 10))],
+     (x) => x !== this.collection[this.collection.findIndex((y) => y.id === parseInt(removeId, 10))],
    );
    localStorage.setItem('bookObject', JSON.stringify(this.collection));
    this.DisplayBooks(this.collection);
  }
 }
 const collectedBooks = new BooksCollection();
+window.onload = () => {
+  const getData = localStorage.getItem('bookObject');
+  const data = JSON.parse(getData);
+  if (data) {
+    collectedBooks.collection = data;
+  }
+  addingBook.style.listStyle = 'none';
+  collectedBooks.DisplayBooks(collectedBooks.collection);
+  addingBook.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+      collectedBooks.removeItem(e);
+    }
+  });
+};
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  collectedBooks.addItem();
+});
+
