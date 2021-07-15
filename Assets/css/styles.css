@@ -19,7 +19,7 @@ body {
   width: 100%;
   row-gap: 15px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
 }
 
 .main-section h1 {
