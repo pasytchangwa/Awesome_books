@@ -2,27 +2,27 @@ const addingBook = document.querySelector('.book-list');
 const addTitle = document.querySelector('.title');
 const addAuthor = document.querySelector('.author');
 const mainSect = document.querySelector('.main-section');
-const listSect = document.querySelector('awesome-list');
+const listSect = document.querySelector('.awesome-list');
 const form = document.querySelector('.add-book');
 const headerDate = document.querySelector('.cur-date');
 const footerDate = document.querySelector('.date');
-const awesomelist = document.querySelector('#item1')
-const addNew = document.querySelector('#item2')
-const contactMe = document.querySelector('#item3')
+const awesomelist = document.querySelector('#item1');
+const addNew = document.querySelector('#item2');
+const contactMe = document.querySelector('#item3');
 
 // Creating the contact section
 const contact = document.createElement('div');
 contact.className = 'contact-section';
 const contactHead = document.createElement('h2');
 contactHead.className = 'main-title';
-contactHead.innerHTML = 'contact information'
+contactHead.innerHTML = 'contact information';
 contact.appendChild(contactHead);
 const contactPar = document.createElement('p');
 contactPar.className = 'contact-par';
 contactPar.innerHTML = 'Please do not hesitate to get in touch with us in case you have any questions!';
 contact.appendChild(contactPar);
 const contactInfo = document.createElement('ul');
-contactInfo.className = 'contact-info'
+contactInfo.className = 'contact-info';
 const contactInfoEl1 = document.createElement('li');
 contactInfoEl1.className = 'contact-infoItem';
 contactInfoEl1.innerHTML = 'Our e-mail: mail@awesomebook.com';
@@ -50,7 +50,7 @@ class BooksCollection {
         (item) => `
   <li class='list-item'><p>"${item.title}" by ${item.author}</p>
   <button type='button' id='${item.id}' class='remove-btn'>Remove</button></li>
-  `
+  `,
       )
       .join('');
     addingBook.innerHTML = bookLists;
@@ -88,11 +88,10 @@ class BooksCollection {
   removeItem = (ev) => {
     const removeId = ev.target.id;
     this.collection = this.collection.filter(
-      (x) =>
-        x !==
-        this.collection[
+      (x) => x
+        !== this.collection[
           this.collection.findIndex((y) => y.id === parseInt(removeId, 10))
-        ]
+        ],
     );
     localStorage.setItem('bookObject', JSON.stringify(this.collection));
     this.DisplayBooks(this.collection);
@@ -140,6 +139,38 @@ form.addEventListener('submit', (e) => {
     collectedBooks.addItem();
   }
   setTimeout(() => document.querySelector('.alert').remove(), 3000);
+});
+
+awesomelist.addEventListener('click', () => {
+  if (mainSect.contains(contact)) {
+    mainSect.removeChild(contact);
+  }
+  listSect.classList.add('showSection');
+  form.classList.remove('showSection');
+  contact.classList.remove('showSection');
+  awesomelist.style.color = 'blue';
+  addNew.style.color = 'black';
+  contactMe.style.color = 'black';
+});
+addNew.addEventListener('click', () => {
+  if (mainSect.contains(contact)) {
+    mainSect.removeChild(contact);
+  }
+  form.classList.add('showSection');
+  listSect.classList.remove('showSection');
+  contact.classList.remove('showSection');
+  addNew.style.color = 'blue';
+  awesomelist.style.color = 'black';
+  contactMe.style.color = 'black';
+});
+contactMe.addEventListener('click', () => {
+  mainSect.appendChild(contact);
+  contact.classList.add('showSection');
+  form.classList.remove('showSection');
+  listSect.classList.remove('showSection');
+  contactMe.style.color = 'blue';
+  awesomelist.style.color = 'black';
+  addNew.style.color = 'black';
 });
 
 // footer date
