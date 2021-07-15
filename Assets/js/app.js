@@ -17,7 +17,7 @@ class BooksCollection {
         (item) => `
   <li class='list-item'><p>"${item.title}" by ${item.author}</p>
   <button type='button' id='${item.id}' class='remove-btn'>Remove</button></li>
-  `,
+  `
       )
       .join('');
     addingBook.innerHTML = bookLists;
@@ -55,10 +55,11 @@ class BooksCollection {
   removeItem = (ev) => {
     const removeId = ev.target.id;
     this.collection = this.collection.filter(
-      (x) => x
-        !== this.collection[
+      (x) =>
+        x !==
+        this.collection[
           this.collection.findIndex((y) => y.id === parseInt(removeId, 10))
-        ],
+        ]
     );
     localStorage.setItem('bookObject', JSON.stringify(this.collection));
     this.DisplayBooks(this.collection);
@@ -94,11 +95,9 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (addTitle.value === '' || addAuthor.value === '') {
     const alert = document.createElement('p');
-    alert.innerHTML = 'Please, title & author are required!';
+    alert.innerHTML = 'Please you must enter a value for both inputs!';
     alert.className = 'alert';
-    alert.style.height = '25px';
-    alert.style.width = '100%';
-    alert.style.textAlign = 'center';
+    alert.style.height = '20px';
     alert.style.color = 'white';
     alert.style.backgroundColor = 'red';
     alert.style.fontWeight = 'bold';
