@@ -1,14 +1,18 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 
-# Awesome books: plain JavaScript with objects
+# Awesome books: Complete WebPage With Navigation
 
-> This project aimed at setting up a mobile and desktop version of my personal portfolio and the following objectives were expected:
+> This project aimed at setting up a mobile and desktop version of our awesome book app.
 
 - UnUnderstand different ways to create objects in JavaScript.
 - Create and access properties and methods of JavaScript objects.
 
 Additional description about the project and its features.
+
+## Online Demo
+
+https://pasytchangwa.github.io/Awesome_books/
 
 ## Built With
 
@@ -18,7 +22,7 @@ Additional description about the project and its features.
 
 **Requirements**
 
-- HTML, JavaScript linters
+- HTML, CSS, JavaScript linters
 - Github Pages
 
 ## Steps to clone the repository to your local repo using VS Code
