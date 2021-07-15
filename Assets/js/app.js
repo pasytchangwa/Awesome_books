@@ -141,6 +141,8 @@ form.addEventListener('submit', (e) => {
   setTimeout(() => document.querySelector('.alert').remove(), 3000);
 });
 
+// Event listeners for navigation sections
+
 awesomelist.addEventListener('click', () => {
   if (mainSect.contains(contact)) {
     mainSect.removeChild(contact);
@@ -176,3 +178,5 @@ contactMe.addEventListener('click', () => {
 // footer date
 footerDate.innerHTML = new Date().getFullYear();
 // Header date
+const dt = new Date();
+headerDate.innerHTML = dt.toUTCString();
