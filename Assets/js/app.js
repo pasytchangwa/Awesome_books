@@ -178,5 +178,5 @@ contactMe.addEventListener('click', () => {
 // footer date
 footerDate.innerHTML = new Date().getFullYear();
 // Header date
-const dt = new Date();
-headerDate.innerHTML = dt.toUTCString();
+const time = new Date();
+headerDate.innerHTML = time.toLocaleString();
