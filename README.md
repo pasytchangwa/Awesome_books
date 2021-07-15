@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 
-# Awesome books: plain JavaScript with objects
+# Awesome books: Complete WebPage With Navigation
 
 > This project aimed at setting up a mobile and desktop version of our awesome book app.
 
