@@ -95,9 +95,10 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (addTitle.value === '' || addAuthor.value === '') {
     const alert = document.createElement('p');
-    alert.innerHTML = 'Please you must enter a value for both inputs!';
+    alert.innerHTML = 'Please, the title and author are required!';
     alert.className = 'alert';
-    alert.style.height = '20px';
+    alert.style.height = '25px';
+    alert.style.textAlign = 'center';
     alert.style.color = 'white';
     alert.style.backgroundColor = 'red';
     alert.style.fontWeight = 'bold';
