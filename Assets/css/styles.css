@@ -85,12 +85,11 @@ body {
 
 .cur-date {
   align-self: flex-end;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: black;
   width: 100%;
-  border: 1px solid red;
   height: 1.5rem;
-  text-align: center;
+  text-align: end;
 }
 
 /* main section */
