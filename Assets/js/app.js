@@ -94,11 +94,16 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (addTitle.value === '' || addAuthor.value === '') {
     const alert = document.createElement('p');
-    alert.innerHTML = 'Please you must enter a value for both inputs';
-    alert.style.color = 'red';
+    alert.innerHTML = 'Please you must enter a value for both inputs!';
+    alert.className = 'alert';
+    alert.style.height = '25px';
+    alert.style.textAlign = 'center';
+    alert.style.color = 'white';
+    alert.style.backgroundColor = 'red';
     alert.style.fontWeight = 'bold';
     form.appendChild(alert);
   } else {
     collectedBooks.addItem();
   }
+  setTimeout(() => document.querySelector('.alert').remove(), 3000);
 });
