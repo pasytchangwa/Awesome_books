@@ -4,10 +4,12 @@ const addAuthor = document.querySelector('.author');
 const mainSect = document.querySelector('.main-section');
 const listSect = document.querySelector('awesome-list');
 const form = document.querySelector('.add-book');
-const datePar = document.querySelector('.cur-date');
+const headerDate = document.querySelector('.cur-date');
+const footerDate = document.querySelector('.date');
 const awesomelist = document.querySelector('#item1')
 const addNew = document.querySelector('#item2')
 const contactMe = document.querySelector('#item3')
+
 // Creating the contact section
 const contact = document.createElement('div');
 contact.className = 'contact-section';
@@ -139,3 +141,7 @@ form.addEventListener('submit', (e) => {
   }
   setTimeout(() => document.querySelector('.alert').remove(), 3000);
 });
+
+// footer date
+footerDate.innerHTML = new Date().getFullYear();
+// Header date

@@ -215,9 +215,13 @@ body {
   align-self: flex-end;
   padding-left: 1.5rem;
   padding-right: 1rem;
-  font-size: 1rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
   font-weight: bold;
   color: black;
+  text-transform: capitalize;
 }
 
 /* Third main section (Dynamic contact section) */
