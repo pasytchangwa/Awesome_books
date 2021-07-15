@@ -66,6 +66,7 @@ body {
   background-color: transparent;
   margin-right: 4px;
   width: 4rem;
+  cursor: pointer;
 }
 
 .main-section hr {
@@ -113,6 +114,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   color: black;
+  cursor: pointer;
 }
 
 .remove-btn {
