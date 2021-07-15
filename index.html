@@ -8,23 +8,42 @@
  <link rel="stylesheet" href="./Assets/css/styles.css">
 </head>
 <body>
- <main class="main-section">
-  <h1 class="main-title">Awesome books</h1>
-  <ul class="book-list">
-
-  </ul>
-  <hr>
-  <form class="add-book">
-   <h2>Add a new Book</h2>
-   <div class='container'>
-    <input class="title" type="text" placeholder="title" aria-label="title">
+ <div class="wrapper">
+  <header class="app-header">
+   <nav class='app-nav'>
+    <ul class="nav-items">
+     <li class="nav-item"><a href="#" class="item-link" id='item1'>awesome books list</a>list<span class="separator">|</span></li>
+     <li class="nav-item"><a href="#" class="item-link" id='item2'>add new</a>list<span class="separator">|</span></li>
+     <li class="nav-item"><a href="#" class="item-link" id='item3'>contact</a>list<span class="separator">|</span></li>
+    </ul>
+    <P class="cur-date"></P>
+   </nav>
+  </header>
+  <main class="main-section">
+   <div class="awesome-list">
+    <h1 class="main-title">Awesome books</h1>
+    <ul class="book-list">
+  
+    </ul>
    </div>
-   <div class='container'>
-    <input class="author" type="text" placeholder="author" aria-label="author">
-   </div>
-   <button type="submit" class="add-btn">Add</button>
-  </form>
- </main>
+   <form class="add-book add-section">
+    <h2 class='header'>Add a new Book</h2>
+    <div class='container'>
+     <input class="title" type="text" placeholder="title" aria-label="title">
+    </div>
+    <div class='container'>
+     <input class="author" type="text" placeholder="author" aria-label="author">
+    </div>
+    <button type="submit" class="add-btn">Add</button>
+   </form>
+  </main>
+  <footer class='app-footer'>
+   <p class="copyright">
+    &copy;
+   </p>
+  </footer>
+ </div>
+ <script src="luxon.js"></script>
  <script src="./Assets/js/app.js"></script>
 </body>
 </html>
