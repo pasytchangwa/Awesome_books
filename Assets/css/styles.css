@@ -218,14 +218,14 @@ body {
 }
 
 .copyright {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   color: black;
   text-transform: capitalize;
 }
 
 /* Third main section (Dynamic contact section) */
-.constact-section {
+.contact-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,17 +237,17 @@ body {
   font-size: 1rem;
   font-weight: bold;
   color: black;
-  width: 75%;
   margin: 0 auto;
   line-height: 1.4rem;
 }
 
 .contact-info {
   list-style-type: disc;
+  padding-left: 30px;
 }
 
 .contact-infoItem {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: black;
 }
